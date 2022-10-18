@@ -1,13 +1,12 @@
 import re
 
 def flatten(list):
+
     result = []
     for sublist in list:
-        sublist = re.sub('[\[\]]','',repr(list)) 
-        result.append(sublist)
-        for l in result:
-            l = str(result)
-        return l
+        for element in sublist:
+            result.append(element)
+    return result
 
-obj = flatten([[1, 2], [3, 4], [5, 6]])
-print(obj.replace("'", ""))
+obj = flatten([[1, 2], [3, 4]])
+print(obj)
